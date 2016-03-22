@@ -5,6 +5,7 @@ In this exercise, you will build a&nbsp;**Contacts Manager** for the Skystone Po
 ### Purpose
 
 The Contacts Manager&nbsp;displays a list of contacts in a table and allows the user to add new entries with a form.&nbsp;Please reference the wireframe below.
+![alt tag](https://raw.githubusercontent.com/skystoneinternational/skystone-test/master/assets/skystone-contacts-manager-wireframe.png)
 
 ### Requirements
 

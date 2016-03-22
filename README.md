@@ -1,6 +1,6 @@
 Welcome!
 
-In this exercise, you will build a&nbsp;**Contacts Manager** for the Skystone Portal. You will use Meteor or Angular, Bootstrap, data&nbsp;from our website and a handful of files provided here.&nbsp;
+In this exercise, you will build a&nbsp;**Contacts Manager** for the Skystone Portal. You will use Meteor or Angular, Bootstrap, data&nbsp;from our website and the handful of files found under *assets*.&nbsp;
 
 ### Purpose
 

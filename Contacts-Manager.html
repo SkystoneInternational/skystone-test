@@ -1,0 +1,122 @@
+﻿<head>
+    <title>Contacts Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="nav navbar-header">
+                <p class="navbar-text">Skystone International</p>
+            </div>
+            <div class="navbar-right">
+                <p class="navbar-text">Contacts Manager</p>
+            </div>
+        </div>
+    </nav>
+    <div class="container" ng-app="contact-manager" ng-controller="ContactCtrl">
+        <div class="page-header">
+            <h2>Create New Contact</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form role="form" name="contactForm" class="simple-form" novalidate>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input tabindex="1" ng-model="saveContact.firstName" class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" ng-required='true' />
+                                        <span ng-show="contactForm.firstName.$error.required">The first name is required.</span>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-error': contactForm.phone.$error.number}">
+                                        <label for="phone">Phone</label>
+                                        <input tabindex="3" ng-model="saveContact.phone" class="form-control" type="text" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" ng-required="true" />
+                                        <span class="help-block" ng-show="contactForm.phone.$error.required || contactForm.phone.$error.number">Valid phone number is required.</span>
+                                        <span class="help-block" ng-show="((contactForm.phone.$error.minlength || contactForm.phone.$error.maxlength) && contactForm.phone.$dirty) ">phone number should be 10 digits</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="division">Division</label>
+                                        <select tabindex="5" name="division" ng-model="saveContact.division" class="form-control" ng-options="x for x in divisions" ng-required="true"></select>
+                                        <span ng-show="contactForm.division.$error.required">The division is required.</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Last Name</label>
+                                        <input tabindex="2" ng-model="saveContact.lastName" class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" ng-required="true" />
+                                        <span ng-show="contactForm.lastName.$error.required">The last name is required.</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input tabindex="4" ng-model="saveContact.email" class="form-control" type="email" name="email" id="email" placeholder="Email" ng-required="true" />
+                                        <span ng-show="contactForm.email.$error.email || contactForm.email.$error.email">Email must be valid.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <button ng-click="addContact(saveContact)" ng-show="!showSave" ng-disabled="contactForm.$invalid" class="btn btn-xs pull-right" id="createContact">Create</button>
+                            <button ng-click="updateContact(saveContact)" ng-show="showSave" ng-disabled="contactForm.$invalid" class="btn btn-xs pull-right" id="saveContact">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                        <th>Division</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th class="phone">Phone</th>
+                        <th>Email</th>
+                    </tr>
+                    <tr ng-repeat="contact in contacts">
+                        <td hidden="hidden">
+                            <span class="text">{{contact._id}}</span>
+                        </td>
+                        <td>
+                            <span class="text">{{contact.division}}</span>
+                        </td>
+                        <td>
+                            <span class="text">{{contact.firstName}}</span>
+                        </td>
+                        <td>
+                            <span class="text">{{contact.lastName}}</span>
+                        </td>
+                        <td class="phone">
+                            <span class="text">{{contact.phone}}</span>
+                        </td>
+                        <td>
+                            <span class="text">{{contact.email}}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-xs" ng-click="editContact(contact)"><span class="glyphicon glyphicon-edit"></span></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-xs" ng-click="toggleModal(contact._id)"><span class="glyphicon glyphicon-remove"></span></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <modal title="Confirm Delete" visible="showModal">
+            <div class="modal-body">
+                <p>Confirm removal of contact?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-xs" ng-click="removeRow()" data-dismiss="modal">OK</button>
+                <button class="btn btn-xs" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+        </modal>
+    </div>
+
+    <nav class="footer">
+        <div class="container">
+            <div class="navbar-center">
+                <p class="text-center">Copyright © 2015 Skystone International LP. All Rights Reserved.</p>
+            </div>
+        </div>
+    </nav>
+</body>

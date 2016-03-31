@@ -1,0 +1,70 @@
+﻿<body id="body">
+    <div id="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Skystone International &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contact Manager</div>
+    <div id="subTitle">Create New Contact</div>
+    <div id="wrap">
+        <div id="box1">
+            <form role="form">
+                <div class="panel panel-default">
+                    <div class="form-group">
+                        <div class="panel-body">
+                            <label for="fn">First Name:</label>
+                            <input type="text" class="form-control" id="fn">
+                            <label for="ln">Last Name:</label>
+                            <input type="text" class="form-control" id="ln">
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control" id="phone">
+                            <label for="em">Email:</label>
+                            <input type="email" class="form-control" id="em">
+                            <label for="sel1">Division</label>
+                            <select class="form-control" id="sel1">
+                                <option>Asset Integrity</option>
+                                <option>Emergency Management</option>
+                                <option>Pipeline Integrity & Engineering</option>
+                                <option>Cathodic Protection</option>
+                                <option>Integrity Projects</option>
+                                <option>Laboratory</option>
+                                <option>Human Resources</option>
+                                <option>Training</option>
+                            </select>
+                        </div>
+                        <div align="right" class="panel-footer">
+                            <button type="submit" class="btn btn-danger btn-sm">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        <div id="box2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Division</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Business Developmen</td>
+                        <td>Valeria</td>
+                        <td>Blumentsvaig</td>
+                        <td>403-441-1811</td>
+                        <td>vblumentsvaig@skystone.ca</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="clear"></div>
+    </div>
+    <div id="footer">
+        Copyright © 2016 Skystone International LP. All Rights Reserved.
+    </div>
+</body>
+
+<template name="task">
+    <li>{{text}}</li>
+</template>

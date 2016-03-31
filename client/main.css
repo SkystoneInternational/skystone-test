@@ -1,0 +1,56 @@
+#body{
+background-image: url("noisy-texture-100x100-o3-d10-c-ffffff-t1.png");
+background-color: #cccccc;
+margin-top:10px;
+margin-left:60px;
+margin-right:60px;
+height: 100%;
+}
+#header {
+background-color: rgb(255, 73, 38);
+height: 25px;
+color: white;
+font-size:18px;
+ }
+#subTitle {
+border-bottom: 2px solid gray;
+width: 100%;
+text-align: left ;
+height: 20px;
+margin-top: 10px;
+color: black;
+font-size:18px;
+font-weight:bold;
+padding-top: 0px;
+}
+#wrap {
+margin-left:60px;
+margin-right:60px;
+margin-top:30px;
+ }
+
+#box1 {
+width:30%;
+float: left;
+height: 400px;
+margin-right: 20px;
+}
+#box2{
+width: 65%;
+float: right;
+height: 400px;
+background-color:white;
+}
+#clear {
+clear: both;
+}
+#footer {
+border-top: 2px solid gray;
+width: 100%;
+text-align: center ;
+height: 50px;
+margin-top: 30px;
+color: white;
+font-size:12px;
+padding-top: 10px;
+}

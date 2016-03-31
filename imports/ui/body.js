@@ -6,7 +6,14 @@ import './body.html';
  
 Template.body.helpers({
     tasks() {
-        return Tasks.find({}, { sort: { createdAt: -1 } });
+        //return Tasks.find({}, { sort: { createdAt: -1 } });
+        //Test to get the first name field
+        Tasks.find(
+  {}
+).forEach(function(obj){
+    print(obj.fn)
+})
+        return Tasks.find({}, {fn: 1});
     },
 });
 
